@@ -47,8 +47,8 @@ public class ItemController {
                            @RequestParam(value = "amount") int amount,
                            @RequestParam(value = "category") String category) {
 
-        Item groceryList = new Item(name, unitPrice, amount, category);
-        dao.save(groceryList);
+        Item item = new Item(name, unitPrice, amount, category);
+        dao.save(item);
     }
 
     //*
@@ -60,9 +60,9 @@ public class ItemController {
                            @RequestParam(value = "amount") int amount,
                            @RequestParam(value = "category") String category) {
 
-        Item groceryList = new Item(name, price, amount, category);
-        groceryList.setId(id);
-        dao.save(groceryList);
+        Item item = new Item(name, price, amount, category);
+        item.setId(id);
+        dao.save(item); //save is zowel voor een insert als een update (check op id if aanwezig)
     }
     //*/
 
